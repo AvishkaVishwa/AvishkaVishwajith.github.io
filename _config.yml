@@ -1,14 +1,17 @@
+# Site Settings
 title: Avishka Vishwajith
-description: Electronics | Embedded Systems | PCB Design 
-theme: jekyll-theme-minimal
-show_downloads: true
-logo: # We can add a logo url here later
+email: your-email@example.com
+description: >-
+  Automation & Electronics Enthusiast portfolio. Specialized in 
+  embedded systems and IoT solutions.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://username.github.io
 
-# This creates your Top Navigation Menu
-header_pages:
-  - index.md
-  - projects.md
-  - about.md
+# Social Links
+github_username: AvishkaVishwa
+linkedin_username: avishka-vishwajith1127
 
-# This is for SEO (Google Search)
-url: "https://avishkavishwajith.github.io"
+# Build settings
+remote_theme: jekyll/minima # Optional, but we use a custom layout
+plugins:
+  - jekyll-feed
