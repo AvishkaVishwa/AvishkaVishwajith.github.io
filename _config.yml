@@ -2,18 +2,14 @@ title: Electro-man
 description: Electronics • Robotics • Embedded Systems
 url: "https://avishkavishwajith.github.io"
 baseurl: ""
-
 permalink: pretty
 
 collections:
   products:
     output: true
     permalink: /products/:name/
-  projects:
-    output: true
-    permalink: /portfolio/:name/
 
-# Put your AdSense publisher ID later (example: ca-pub-123...)
-adsense_client: ""   # e.g. ca-pub-XXXXXXXXXXXXXXXX
+adsense_client: ""   # later: ca-pub-xxxxxxxxxxxxxxx
 contact_email: "jayawardenago@gmail.com"
-whatsapp_link: ""    # e.g. https://wa.me/94XXXXXXXXX
+linkedin_url: "http://www.linkedin.com/in/avishka-vishwajith1127"
+github_url: "https://github.com/AvishkaVishwa"
