@@ -1,31 +1,22 @@
-<!-- Keep the <head> and <style> sections as they are -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+
+  {% include adsense.html %}
+</head>
+
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="/" class="logo">AV</a>
-            <ul class="nav-links">
-                <li><a href="/#hero">Home</a></li>
-                <li><a href="/#skills">Skills</a></li>
-                <li><a href="/#portfolio">Projects</a></li>
-            </ul>
-        </div>
-    </nav>
+  {% include navbar.html %}
 
-    <!-- UPDATED SECTION: Removed hardcoded homepage content -->
-    {% if page.url == "/" %}
-        <!-- Render index.md content directly -->
-        {{ content }}
-    {% else %}
-        <!-- Wrap other pages in a content wrapper -->
-        <div class="content-wrapper">
-            {{ content }}
-        </div>
-    {% endif %}
+  <main class="container">
+    {{ content }}
+  </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Avishka Vishwajith. All rights reserved.</p>
-        </div>
-    </footer>
+  {% include footer.html %}
 </body>
 </html>
