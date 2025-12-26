@@ -1,17 +1,19 @@
-# Site Settings
-title: Avishka Vishwajith
-email: jayawardenago@gmail.com
-description: >-
-  Automation & Electronics Enthusiast portfolio. Specialized in 
-  embedded systems and IoT solutions.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://username.github.io
+title: Electro-man
+description: Electronics • Robotics • Embedded Systems
+url: "https://avishkavishwajith.github.io"
+baseurl: ""
 
-# Social Links
-github_username: AvishkaVishwa
-linkedin_username: avishka-vishwajith1127
+permalink: pretty
 
-# Build settings
-remote_theme: jekyll/minima # Optional, but we use a custom layout
-plugins:
-  - jekyll-feed
+collections:
+  products:
+    output: true
+    permalink: /products/:name/
+  projects:
+    output: true
+    permalink: /portfolio/:name/
+
+# Put your AdSense publisher ID later (example: ca-pub-123...)
+adsense_client: ""   # e.g. ca-pub-XXXXXXXXXXXXXXXX
+contact_email: "jayawardenago@gmail.com"
+whatsapp_link: ""    # e.g. https://wa.me/94XXXXXXXXX
