@@ -494,6 +494,7 @@ li {
   gap: 16px;
   position: sticky;
   top: 110px;
+  align-self: start;
 }
 
 .doc-card {
@@ -784,7 +785,9 @@ li {
     max-width: 360px;
     margin: 0 auto;
   }
+}
 
+@media (max-width: 760px) {
   .doc-layout {
     grid-template-columns: 1fr;
   }
