@@ -14,13 +14,21 @@ if (burger && mobileMenu) {
 }
 
 // Active link highlight
-const path = window.location.pathname.replace(/\/+$/, "");
+const normalizePath = path => path.replace(/\/+$/, "");
+const isIndexPath = path =>
+  path === "" || path === "/" || path.endsWith("/index.html");
+const currentPath = normalizePath(window.location.pathname);
+
 document.querySelectorAll(".menu a, .mobile-menu a").forEach(a => {
   const href = a.getAttribute("href");
   if (!href) return;
-  const target = href.startsWith("/") ? href : "/" + href;
-  const targetClean = target.replace(/\/+$/, "");
-  if (targetClean === path || (targetClean === "/index.html" && (path === "/" || path === ""))) {
+  let resolvedPath;
+  try {
+    resolvedPath = normalizePath(new URL(href, window.location.href).pathname);
+  } catch {
+    return;
+  }
+  if (resolvedPath === currentPath || (isIndexPath(resolvedPath) && isIndexPath(currentPath))) {
     a.classList.add("active");
   }
 });
