@@ -216,9 +216,9 @@ li {
 
 #home {
   background-image:
-    linear-gradient(120deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.72)),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.62)),
     url("../img/circuit-bg.svg");
-  background-size: cover, 420px 420px;
+  background-size: cover, 360px 360px;
   background-position: center, center;
   background-repeat: no-repeat, repeat;
 }
@@ -831,7 +831,7 @@ li {
   }
 
   #home {
-    background-size: cover, 320px 320px;
+    background-size: cover, 280px 280px;
   }
 
   .actions {
