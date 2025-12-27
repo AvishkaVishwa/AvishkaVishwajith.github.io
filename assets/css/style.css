@@ -214,6 +214,15 @@ li {
   z-index: 0;
 }
 
+#home {
+  background-image:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.78)),
+    url("../img/circuit-bg.svg");
+  background-size: cover, 520px 520px;
+  background-position: center, center;
+  background-repeat: no-repeat, repeat;
+}
+
 .hero::before {
   content: "";
   position: absolute;
@@ -819,6 +828,10 @@ li {
 @media (max-width: 640px) {
   .hero {
     padding-top: 70px;
+  }
+
+  #home {
+    background-size: cover, 360px 360px;
   }
 
   .actions {
