@@ -230,8 +230,8 @@ li {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: repeat(2, 140px);
-  max-width: 420px;
+  grid-template-rows: repeat(2, 180px);
+  max-width: 520px;
   justify-self: end;
   position: relative;
 }
@@ -460,6 +460,74 @@ li {
   border-radius: calc(var(--radius) - 10px);
   object-fit: cover;
   aspect-ratio: 4 / 5;
+}
+
+.doc-layout {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: start;
+  margin-top: 16px;
+}
+
+.doc-content {
+  display: grid;
+  gap: 16px;
+}
+
+.doc-body {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.doc-body p {
+  margin: 0;
+}
+
+.doc-body ul,
+.doc-body ol {
+  margin-top: 10px;
+}
+
+.doc-aside {
+  display: grid;
+  gap: 16px;
+  position: sticky;
+  top: 110px;
+}
+
+.doc-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px;
+  box-shadow: var(--shadow);
+}
+
+.doc-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: calc(var(--radius) - 10px);
+}
+
+.doc-caption {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.doc-facts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.doc-facts li {
+  color: var(--muted);
+  font-size: 14px;
 }
 
 .skills-grid {
@@ -702,9 +770,9 @@ li {
   }
 
   .hero-media {
-    max-width: 440px;
+    max-width: 500px;
     margin: 0 auto;
-    grid-template-rows: repeat(2, 140px);
+    grid-template-rows: repeat(2, 170px);
     justify-self: center;
   }
 
@@ -715,6 +783,14 @@ li {
   .about-photo-frame {
     max-width: 360px;
     margin: 0 auto;
+  }
+
+  .doc-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-aside {
+    position: static;
   }
 }
 
@@ -738,9 +814,9 @@ li {
   }
 
   .hero-media {
-    max-width: 360px;
+    max-width: 400px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, 120px);
+    grid-template-rows: repeat(2, 150px);
   }
 
   .hero-card-large {
