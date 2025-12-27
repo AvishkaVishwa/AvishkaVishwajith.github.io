@@ -233,6 +233,29 @@ li {
   grid-template-rows: repeat(2, 140px);
   max-width: 420px;
   justify-self: end;
+  position: relative;
+}
+
+.hero-media::before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: -18px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle at 30% 30%, rgba(20, 184, 166, 0.25), transparent 70%);
+  z-index: 0;
+}
+
+.hero-media::after {
+  content: "";
+  position: absolute;
+  left: -28px;
+  bottom: -28px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle at 70% 70%, rgba(14, 165, 233, 0.18), transparent 70%);
+  z-index: 0;
 }
 
 .hero-card {
@@ -243,6 +266,11 @@ li {
   padding: 6px;
   box-shadow: var(--shadow);
   overflow: hidden;
+  z-index: 1;
+  --tilt: 0deg;
+  --lift: 0px;
+  transform: translateY(var(--lift)) rotate(var(--tilt));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-card::after {
@@ -259,6 +287,26 @@ li {
   height: 100%;
   object-fit: cover;
   border-radius: calc(var(--radius) - 10px);
+}
+
+.hero-card--1 {
+  --tilt: -1.2deg;
+  --lift: -6px;
+}
+
+.hero-card--2 {
+  --tilt: 1deg;
+  --lift: 4px;
+}
+
+.hero-card--3 {
+  --tilt: -0.8deg;
+  --lift: 8px;
+}
+
+.hero-card:hover {
+  transform: translateY(calc(var(--lift) - 4px)) rotate(0deg);
+  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.12);
 }
 
 .hero-card-large {
@@ -697,6 +745,11 @@ li {
 
   .hero-card-large {
     grid-row: auto;
+  }
+
+  .hero-card {
+    --tilt: 0deg;
+    --lift: 0px;
   }
 
   .hero-card img {
