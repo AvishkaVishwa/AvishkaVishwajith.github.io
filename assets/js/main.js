@@ -39,6 +39,42 @@ if (scrollSections.length) {
   }
 }
 
+// Project cards
+const projectGrids = document.querySelectorAll("[data-projects]");
+if (projectGrids.length && Array.isArray(window.PROJECTS)) {
+  const projects = window.PROJECTS.filter(project => project && project.title && project.image);
+  projectGrids.forEach(grid => {
+    const limitAttr = grid.getAttribute("data-projects-limit");
+    const limit = limitAttr ? Number.parseInt(limitAttr, 10) : projects.length;
+    const visibleProjects = Number.isFinite(limit) ? projects.slice(0, limit) : projects;
+    grid.innerHTML = visibleProjects.map((project, index) => {
+      const delay = 3 + (index % 7);
+      const title = project.title || "Project";
+      const description = project.description || "";
+      const tech = project.tech || "";
+      const image = project.image || "";
+      const alt = project.alt || title;
+      const link = project.link
+        ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-link">Repo <i class="fas fa-external-link-alt"></i></a>`
+        : "";
+      const stack = tech ? `<p class="project-stack">Tech: ${tech}</p>` : "";
+      return `
+        <article class="project-card animate-fade-in-up delay-${delay}">
+          <div class="project-media">
+            <img src="${image}" alt="${alt}" />
+          </div>
+          <div class="project-content">
+            <h3>${title}</h3>
+            <p>${description}</p>
+            ${stack}
+            ${link}
+          </div>
+        </article>
+      `;
+    }).join("");
+  });
+}
+
 // Active link highlight
 const normalizePath = path => path.replace(/\/+$/, "");
 const isIndexPath = path =>
