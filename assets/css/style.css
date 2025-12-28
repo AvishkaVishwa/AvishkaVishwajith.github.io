@@ -608,7 +608,8 @@ li {
   background: rgba(20, 184, 166, 0.08);
 }
 
-.project-media img {
+.project-media img,
+.project-media video {
   width: 100%;
   height: 180px;
   object-fit: cover;
@@ -802,7 +803,8 @@ li {
     padding-top: 90px;
   }
 
-  .project-media img {
+  .project-media img,
+  .project-media video {
     height: 160px;
   }
 
@@ -851,7 +853,8 @@ li {
     justify-content: center;
   }
 
-  .project-media img {
+  .project-media img,
+  .project-media video {
     height: 150px;
   }
 
